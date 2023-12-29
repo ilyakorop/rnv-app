@@ -15,6 +15,7 @@ import {
   List,
   ListItem,
   Link,
+  useMediaQuery,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import ClearIcon from "@mui/icons-material/Clear";
@@ -27,6 +28,8 @@ import { useCallback, useState } from "react";
 const Home = () => {
   const [data, setData] = useState([]);
   const [inputValue, setInputValue] = useState("");
+
+  const isDesktop = useMediaQuery("(min-width:600px)");
 
   const router = useRouter();
 
@@ -109,7 +112,11 @@ const Home = () => {
                     key={row.id}
                     sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                   >
-                    <TableCell component="th" scope="row">
+                    <TableCell
+                      className={isDesktop ? "" : "w-32"}
+                      component="th"
+                      scope="row"
+                    >
                       {row.name}
                     </TableCell>
                     <TableCell>

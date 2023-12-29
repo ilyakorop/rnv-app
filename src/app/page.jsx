@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import {
   Box,
   TextField,
@@ -14,7 +14,6 @@ import {
   Paper,
   List,
   ListItem,
-  ListItemButton,
   Link,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
@@ -46,6 +45,15 @@ const Home = () => {
 
   return (
     <>
+      <div className="flex w-full items-center justify-center">
+        <Image
+          className=""
+          alt="logo"
+          width={200}
+          height={200}
+          src="https://www.rnv-online.de/typo3conf/ext/rnv_site/Resources/Public/Images/rnv-logo.svg"
+        />
+      </div>
       <div className="flex items-center justify-center m-6 ">
         <TextField
           fullWidth
